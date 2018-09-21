@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<environments default="wechat">
+		<!-- 使用缓存池 -->
+		<environment id="wechat">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@//223.112.127.194:7073/wechat" />
+
+				<!-- <property name="url" value="jdbc:oracle:thin:@//127.0.0.1:7073/wechat" 
+					/> -->
+
+				<property name="username" value="wechat" />
+				<property name="password" value=":wechat" />
+
+				<!-- <property name="url" value="jdbc:oracle:thin:@//police.luopan88.com:6069/szzhpt" 
+					/> <property name="username" value="wechat" /> <property name="password" 
+					value="aaaaaaaa" /> -->
+
+				<!-- 在任意时间存在的连接的数量。默认值：10 -->
+				<property name="poolMaximumActiveConnections" value="10" />
+				<!-- 任意时间存在的空闲连接数 -->
+				<property name="poolMaximumIdleConnections" value="1" />
+				<!-- 在被强制返回之前，池中连接被检查的时间。默认值：20000 毫秒 -->
+				<property name="poolMaximumCheckoutTime" value="20000" />
+				<!-- 连接池重新尝试获得连接，默认值：20000 毫秒 -->
+				<property name="poolTimeToWait" value="20000" />
+				<!-- 侦测查询，验证连接是否正常。默认“NO PING QUERY SET” -->
+				<property name="poolPingQuery" value="select 1 from dual" />
+				<!-- 开启或禁用侦测查询 -->
+				<property name="poolPingEnabled" value="true" />
+				<!-- 对空闲超过设定值（毫秒）的连接进行检测,需开启poolPingEnabled,默认0实时检测 -->
+				<property name="poolPingConnectionsNotUsedFor" value="1" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/hotel/sql/functionSQL.xml" />
+	</mappers>
+</configuration>

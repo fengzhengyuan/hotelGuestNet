@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<head>
+		<name>syncSms</name>
+		<desc>20160310</desc>
+		<!-- 异常超时,单位：秒 -->
+		<exceptionTimeOut>120</exceptionTimeOut>
+		<!-- 连接配置文件 -->
+		<connectfile>connectDatabase.xml</connectfile>
+		<!-- 信息日志 -->
+		<log_info_open>1</log_info_open>
+		<!-- 警告日志 -->
+		<log_warn_open>1</log_warn_open>
+		<!-- 错误日志 -->
+		<log_error_open>1</log_error_open>
+	</head>
+	<body>
+		<!--配置信息 -->
+		<rows>
+			<row id="wechat" enable="1" type="password" text="MTU1MDEzMDIzMTN3ZWNoYXQ="></row>
+		</rows>
+	</body>
+</root>

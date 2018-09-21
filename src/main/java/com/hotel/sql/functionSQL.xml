@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="function">
+
+
+	<!--将旅客入住信息插入罗盘的表内 -->
+	<insert id="insertGuestsInfo" parameterType="com.hotel.bean.GuestsInfo">
+		insert into
+		DWD_ZALG_GUESTS(CHECKINSN,GASTHAUSID,CHECKINTIME,NAME,SEXID,NATIONID,BIRTHDATE,PAPERTYPEID,PAPERID,
+		CITYID,ADDRESS,ROOMID,CHECKINMODEID,CHECKINTYPEID,DEPOSIT,BALANCE,TEAMID,CANCELTIME,CARRYTIME,USERNAME,UPLOADED,
+		HADCAR,CARNO,DOWN,DOWNLOADED,VALIDATE1,VALIDATE2,IS2NDCARD,AUTHORITY,GUESTTYPE,CITGC_TIME,PAPERPHOTO,SCENEPHOTO)
+		values(to_char(sysdate,'yyyymmdd')||seq_basis_xh.nextval,
+		#{gasthausId,jdbcType=VARCHAR},
+		#{checkinTime,jdbcType=VARCHAR},
+		#{name,jdbcType=VARCHAR},
+		#{sexId,jdbcType=VARCHAR},
+		#{nationId,jdbcType=VARCHAR},
+		#{birthDate,jdbcType=VARCHAR},
+		#{paperTypeId,jdbcType=VARCHAR},
+		#{paperId,jdbcType=VARCHAR},
+		#{cityId,jdbcType=VARCHAR},
+		#{address,jdbcType=VARCHAR},
+		#{roomId,jdbcType=VARCHAR},
+		#{checkinModeId,jdbcType=VARCHAR},
+		#{checkinTypeId,jdbcType=VARCHAR},
+		#{deposit,jdbcType=VARCHAR},
+		#{balance,jdbcType=VARCHAR},
+		#{teamId,jdbcType=VARCHAR},
+		#{cancelTime,jdbcType=VARCHAR},
+		#{carryTime,jdbcType=VARCHAR},
+		#{userName,jdbcType=VARCHAR},
+		#{uploaded,jdbcType=VARCHAR},
+		#{hadCar,jdbcType=VARCHAR},
+		#{carNo,jdbcType=VARCHAR},
+		#{down,jdbcType=VARCHAR},
+		#{downLoaded,jdbcType=VARCHAR},
+		#{validate1,jdbcType=VARCHAR},
+		#{validate2,jdbcType=VARCHAR},
+		#{is2ndcard,jdbcType=VARCHAR},
+		#{authority,jdbcType=VARCHAR},
+		#{guestType,jdbcType=VARCHAR},
+		#{citgcTime,jdbcType=VARCHAR},
+		#{paperPhoto,jdbcType=VARCHAR},
+		#{scenePhoto,jdbcType=VARCHAR}
+		)
+	</insert>
+</mapper>
